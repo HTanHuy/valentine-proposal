@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .flower-animation {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://example.com/flower.png'); /* Replace with a flower image URL */
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        #yes {
+            transition: transform 0.3s;
+        }
+
+        #yes.enlarged {
+            transform: scale(2); /* Make the Yes button twice as big */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Would you like to go with me tonight, at Valentine Day?</h1>
+        <div class="button-container">
+            <div id="yes" class="button">Yes</div>
+            <div id="no" class="button">No</div>
+        </div>
+        <div class="flower-animation"></div>
+    </div>
+
+    <script>
+        document.getElementById('no').addEventListener('click', function() {
+            this.textContent = "Anh nan ni do, Yes di ma"; // Change text on No click
+            this.removeEventListener('click', arguments.callee); // Remove the current event listener
+            this.addEventListener('click', function() {
+                document.getElementById('yes').classList.add('enlarged'); // Enlarge Yes button
+            });
+        });
+
+        document.getElementById('yes').addEventListener('click', function() {
+            window.location.href = 'love.html'; // Redirect to love.html
+        });
+    </script>
+</body>
+</html>

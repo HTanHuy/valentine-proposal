@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE YOU</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccb;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .heart-animation {
+            position: relative;
+            animation: heartbeat 1s infinite;
+        }
+
+        .heart {
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 0 auto; /* Center the heart */
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -100px; /* Adjusted to position the top part of the heart */
+            left: 0;
+        }
+
+        .heart:after {
+            left: 100px; /* Adjusted to position the right part of the heart */
+            top: 0;
+        }
+
+        h1 {
+            position: absolute; /* Position the text inside the heart */
+            color: white; /* White text color */
+            font-size: 24px; /* Font size */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+            z-index: 1; /* Ensure text is above the heart */
+            margin: 0; /* Remove default margin */
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-animation">
+        <div class="heart"></div>
+        <h1>I LOVE YOU</h1>
+    </div>
+</body>
+</html>
